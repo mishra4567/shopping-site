@@ -1,0 +1,8 @@
+<td>
+                                        <div class="btn-group">
+                                            <input type="text" class="form-control form-control-sm" name="status" value="<?php echo $status ?>" disabled>
+                                            <button class="btn btn-success" value="<?php
+                                             echo $status 
+                                            ?>"></button>
+                                        </div>
+                                    </td>
