@@ -91,10 +91,10 @@ $row=$result->fetch_assoc();
                         <p>
                             <select name="stream" id="">
                                 <option value="">-Slect stream-</option>
-                                <option value="BCA">Bca</option>
-                                <option value="BBA">Bba</option>
-                                <option value="BHM">Bhm</option>
-                                <option value="HHA">Hha</option>
+                                <option <?php if($row['stream']=="BCA"){echo "selected";} ?> value="BCA">Bca</option>
+                                <option <?php if($row['stream']=="BBA"){echo "selected";} ?> value="BBA">Bba</option>
+                                <option <?php if($row['stream']=="BHM"){echo "selected";} ?> value="BHM">Bhm</option>
+                                <option <?php if($row['stream']=="BHA"){echo "selected";} ?> value="HHA">Hha</option>
                             </select>
                         </p>
                         <p>Subject</p>
