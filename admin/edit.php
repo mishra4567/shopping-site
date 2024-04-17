@@ -81,7 +81,8 @@ $row=$result->fetch_assoc();
                     <!-- <div class="col-md-6 text-center">
                         <h3>This is blank page</h3>
                     </div> -->
-                    <form action="./logic/ins.php" method="post" enctype="multipart/form-data">
+                    <form action="./logic/update.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="eid" value="<?php echo $row['sid']; ?>">
                         <p>Name</p>
                         <p><input type="text" name="name" value="<?php echo $row['name'] ?>"></p>
                         <p>Gender</p>
@@ -98,11 +99,16 @@ $row=$result->fetch_assoc();
                             </select>
                         </p>
                         <p>Subject</p>
-                        <p><input type="checkbox" name="subject[]" value="C">c</p>
-                        <p><input type="checkbox" name="subject[]" value="C++">c++</p>
-                        <p><input type="checkbox" name="subject[]" value="PHP">php</p>
+                        <?php 
+                        $subject=explode(",",$row['subject']);
+
+                        ?>
+                        <p><input <?php if(in_array("C",$subject)){echo "checked";} ?> type="checkbox" name="subject[]" value="C">c</p>
+                        <p><input <?php if(in_array("C++",$subject)){echo "checked";} ?> type="checkbox" name="subject[]" value="C++">c++</p>
+                        <p><input <?php if(in_array("PHP",$subject)){echo "checked";} ?> type="checkbox" name="subject[]" value="PHP">php</p>
                         <p>image</p>
                         <p><input type="file" name="s_image"></p>
+                        <td><img style="width:100px;" src="../user_img/<?php echo $row['image']; ?>"/></td>
 
 
                         <p><input type="submit" name="save" value="save"></p>

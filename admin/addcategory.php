@@ -1,6 +1,8 @@
 <?php
+$connect = mysqli_connect("localhost", "root", "", "task-1");
+
 session_start();
-if(!isset($_SESSION['userName'])){
+if (!isset($_SESSION['userName'])) {
     header("location:signin.php");
 }
 ?>
@@ -71,6 +73,18 @@ if(!isset($_SESSION['userName'])){
                 <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
                     <!-- Add category -->
                     <form action="./logic/inscat.php" method="post">
+
+                        <p>category parent </p>
+                        <p><select name="parent_id" id="">
+                                <option value="0">no parent</option>
+                                <?php
+                                $select = "SELECT * FROM categories";
+                                $result=$connect->query();
+                                while ($row = $result->fetch_assoc()){
+                                ?>
+                                <option value="<?php echo ['cid'] ?>"><?php echo ['cat_name'] ?></option>
+                            <?php } ?>
+                            </select></p>
                         <p>Category Name</p>
                         <p><input type="text" name="cName"></p>
                         <p><input type="submit" name="save" value="Add" class="btn btn-success"></p>
