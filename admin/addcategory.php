@@ -1,6 +1,4 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "task-1");
-
 session_start();
 if (!isset($_SESSION['userName'])) {
     header("location:signin.php");
@@ -76,14 +74,15 @@ if (!isset($_SESSION['userName'])) {
 
                         <p>category parent </p>
                         <p><select name="parent_id" id="">
-                                <option value="0">no parent</option>
+                                <option value="0">No parent</option>
                                 <?php
-                                $select = "SELECT * FROM categories";
-                                $result=$connect->query();
-                                while ($row = $result->fetch_assoc()){
+                                $connect = mysqli_connect("localhost", "root", "", "task-1");
+                                $select = "SELECT * FROM categories WHERE pid='0'";
+                                $result = $connect->query($select);
+                                while ($row = $result->fetch_assoc()) {
                                 ?>
-                                <option value="<?php echo ['cid'] ?>"><?php echo ['cat_name'] ?></option>
-                            <?php } ?>
+                                <option value="<?php echo $row['cid'] ;?>"> <?php echo $row['cat_name']; ?></option>
+                                <?php }  ?>
                             </select></p>
                         <p>Category Name</p>
                         <p><input type="text" name="cName"></p>
