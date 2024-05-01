@@ -1,10 +1,11 @@
 <?php 
 session_start();
+
+include("./logic/db.php");
 if(!isset($_SESSION['userName'])){
     header("location:signin.php");
 }
 
-$connect=mysqli_connect("localhost","root","","task-1");
 $editId=$_GET['eid'];
 echo $editId;
 

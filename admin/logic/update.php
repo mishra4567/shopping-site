@@ -1,5 +1,7 @@
 <?php
 // updated post
+
+include("./db.php");
 if (isset($_POST['save'])) {
     $name = $_POST['name'];
     $gender = $_POST['gender'];
@@ -19,7 +21,6 @@ if (isset($_POST['save'])) {
         $fileName = time() . $_FILES['s_image']['name'];
         move_uploaded_file($buffer, "../../user_img/" . $fileName);
         //database conection
-        $conect = mysqli_connect("localhost", "root", "", "task-1");
         $update = "UPDATE student_data SET name='$name',gender='$gender',stream='$stream',subject='$subject',image='$fileName' WHERE sid='$updateId'";
     }else{
         $update = "UPDATE student_data SET name='$name',gender='$gender',stream='$stream',subject='$subject' WHERE sid='$updateId'";

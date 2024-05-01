@@ -1,3 +1,7 @@
+<?php
+include("./logic/db.php");
+
+?>
 <style>
     
 </style>

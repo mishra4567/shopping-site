@@ -1,5 +1,5 @@
 <?php 
-    $conect=mysqli_connect("localhost","root","","task-1");
+include("./logic/db.php");
 ?>
 
 <div class="col-12">

@@ -1,6 +1,7 @@
 <?php
 session_start();
-$connect = mysqli_connect("localhost", "root", "", "task-1");
+include("./logic/db.php");
+
 if (isset($_POST['login'])) {
     $email = $_POST['email'];
     $password =MD5 ($_POST['pass']);

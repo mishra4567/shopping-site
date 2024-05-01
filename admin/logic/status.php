@@ -1,5 +1,6 @@
 <?php
-$conect = mysqli_connect("localhost", "root", "", "task-1");
+
+include("./db.php");
 $sid=$_GET['sid'];
 $status=$_GET['status'];
 

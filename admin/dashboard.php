@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+include("./logic/db.php");
 if (!isset($_SESSION['userName'])) {
     header("location:signin.php");
 }
@@ -126,13 +128,13 @@ if (!isset($_SESSION['userName'])) {
                     ?>
                 </div>
             </section>
-            <section class="container-fluid pt-4 px-4" id="pro_view">
+            <!-- <section class="container-fluid pt-4 px-4" id="pro_view">
                 <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
                     <?php
-                    include("./pro_view2.php")
+                    // include("./pro_view2.php")
                     ?>
                 </div>
-            </section>
+            </section> -->
             <!-- Blank End -->
 
 

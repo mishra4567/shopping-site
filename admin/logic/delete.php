@@ -1,6 +1,5 @@
 <?php
-$conect = mysqli_connect("localhost", "root", "", "task-1");
-
+include("./db.php");
 $studentId = $_GET['did'];
 // echo $studentId;
 //select image from folder 

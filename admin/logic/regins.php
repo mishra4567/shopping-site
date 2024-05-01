@@ -1,5 +1,5 @@
 <?php 
-$connect=mysqli_connect("localhost","root","","task-1");
+include("./db.php");
 if(isset($_POST['regi'])){
     $name=$_POST['name'];
     $email=$_POST['email'];

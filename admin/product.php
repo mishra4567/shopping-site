@@ -1,5 +1,7 @@
 <?php
 session_start();
+include("./logic/db.php");
+
 if (!isset($_SESSION['userName'])) {
     header("location:signin.php");
 }
@@ -66,7 +68,7 @@ if (!isset($_SESSION['userName'])) {
             <!-- Navbar End -->
 
             <!-- Error difind -->
-            
+
             <!-- Blank Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row vh-100 bg-light rounded align-items-center justify-content-center mx-0">
@@ -99,7 +101,7 @@ if (!isset($_SESSION['userName'])) {
                                 <label for="customFile" class="custom-file-label">Choose file</label>
                             </div>
                             <div class="form-group col-md-6">
-                                <input type="number" name="status" value="1">
+                                <input type="hidden" name="status" value="1">
                             </div>
                             <button type="submit" name="save" value="save" class="btn btn-sm text-white shadow" style="background-color: #003153;">Add Item</button>
                         </form>
@@ -151,8 +153,8 @@ if (!isset($_SESSION['userName'])) {
     <!-- file name showing -->
     <script>
         //Add the folloing code if you want the name of the file oppear on select
-        $(".custom-file-input").on("change",function(){
-            var fileName=$(this).val().split("\\").pop();
+        $(".custom-file-input").on("change", function() {
+            var fileName = $(this).val().split("\\").pop();
             $(this).siblings(".custom-file-label").addClass("selected").html(fileName);
         });
     </script>

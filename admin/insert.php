@@ -1,5 +1,7 @@
 <?php 
 session_start();
+
+include("./logic/db.php");
 if(!isset($_SESSION['userName'])){
     header("location:signin.php");
 }

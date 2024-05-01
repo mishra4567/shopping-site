@@ -1,7 +1,8 @@
 <?php
-$conect = mysqli_connect("localhost", "root", "", "task-1");
+include("./logic/db.php");
+
 ?>
-<?php 
+<?php
 
 ?>
 <style>
@@ -74,18 +75,19 @@ $conect = mysqli_connect("localhost", "root", "", "task-1");
                                             <a href="./logic/edit_product.php?pid=<?php echo $row['pid'] ?>" class="edit btn" title="Edit" data-toggle="tooltip">
                                                 <i class="material-icons text-worning">&#xE254</i></a>
                                             <a href="?action=delete&pid=<?php echo $pid  ?>" class="delete" title="Delete" data-toggle="tooltip" onclick="return confirm('Are You Sure')">
-                                                <i class="btn material-icon text-denger fa-solid fa-trash"></i></a>
+                                                <i class="btn material-icons text-denger fa-solid fa-trash"></i></a>
                                         </div>
                                     </td>
                                     <td>
-                                        <?php 
-                                        if($row['status']==1){
-                                            echo'<p><a href="./logic/status.php?sid='.$row['pid'].'&status=0" class="btn btn-success">Enable</a></p>';
-                                        }else{
-                                            echo'<p><a href="./logic/status.php?sid='.$row['pid'].'&status=1" class="btn btn-danger">Disable</a></p>';
+                                        <?php
+                                        if ($row['status'] == 1) {
+                                            echo '<p><a href="./logic/status.php?sid=' . $row['pid'] . '&status=0" class="btn btn-success">Enable</a></p>';
+                                        } else {
+                                            echo '<p><a href="./logic/status.php?sid=' . $row['pid'] . '&status=1" class="btn btn-danger">Disable</a></p>';
                                         }
                                         ?>
                                     </td>
+
         </div>
         </td>
         </form>
@@ -95,5 +97,17 @@ $conect = mysqli_connect("localhost", "root", "", "task-1");
 </tbody>
 </table>
     </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Check all</th>
+                <th scope="col">Actions :</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Copy</th>
+                <th scope="col">Delete</th>
+
+            </tr>
+        </thead>
+    </table>
 </div>
 </div>

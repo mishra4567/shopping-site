@@ -1,5 +1,5 @@
 <?php
-$connect = mysqli_connect("localhost", "root", "", "task-1");
+include("./db.php");
 if (isset($_POST['save'])) {
     $category = $connect->real_escape_string($_POST['cName']);
     $perent=$_POST['parent_id'];

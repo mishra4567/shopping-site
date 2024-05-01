@@ -1,10 +1,10 @@
 <?php 
 session_start();
+include("./db.php");
 if(!isset($_SESSION['userName'])){
     header("location:../signin.php");
 }
 
-$connect=mysqli_connect("localhost","root","","task-1");
 $editId=$_GET['pid'];
 echo $editId;
 
