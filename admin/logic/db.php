@@ -1,3 +1,3 @@
 <?php
-$conect = mysqli_connect("localhost", "root", "", "task-1");
+$connect = mysqli_connect("localhost", "root", "", "task-1");
 ?>

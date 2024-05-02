@@ -12,7 +12,7 @@ if (isset($_POST['save'])) {
     move_uploaded_file($buffer, "../../pro_img/" . $fileName);
     //database conection
     $insert = "INSERT INTO product_data SET name='$name',quntity='$quntity',price='$price',tex='$tex',image='$fileName',status='$status'";
-    if ($conect->query($insert)) {
+    if ($connect->query($insert)) {
         header("location:../dashboard.php");
     };
 } else {

@@ -21,7 +21,7 @@ include("./logic/db.php");
                 <tbody>
                     <?php
                     $select = "SELECT * FROM admin";
-                    $resultSet = $conect->query($select);
+                    $resultSet = $connect->query($select);
                     while ($row = $resultSet->fetch_assoc()) {
                     ?>
                         <tr>

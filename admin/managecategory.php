@@ -20,7 +20,7 @@ include("./logic/db.php");
                 <tbody>
                     <?php
                     $select = "SELECT child.*,parent.cat_name as pname FROM `categories` as child LEFT JOIN categories as parent ON child.pid=parent.cid;";
-                    $resultSet = $conect->query($select);
+                    $resultSet = $connect->query($select);
                     while ($row = $resultSet->fetch_assoc()) {
                     ?>
                         <tr>

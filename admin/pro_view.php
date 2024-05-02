@@ -104,7 +104,7 @@ if (!isset($_SESSION['userName'])) {
                                 <tbody>
                                     <?php
                                     $select = "SELECT * FROM product_data";
-                                    $resultSet = $conect->query($select);
+                                    $resultSet = $connect->query($select);
                                     $i=1;
                                     if ($resultSet->num_rows > 0) {
                                         while ($row = $resultSet->fetch_assoc()) {

@@ -51,7 +51,7 @@ include("./logic/db.php");
                 <tbody>
                     <?php
                     $select = "SELECT * FROM product_data";
-                    $resultSet = $conect->query($select);
+                    $resultSet = $connect->query($select);
                     if ($resultSet->num_rows > 0) {
                         while ($row = $resultSet->fetch_assoc()) {
                             $pid = $row['pid'];

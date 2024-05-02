@@ -1,6 +1,7 @@
 <?php
 session_start();
-include("./logic/db.php");
+include("logic/db.php");
+
 if (!isset($_SESSION['userName'])) {
     header("location:signin.php");
 }
@@ -77,11 +78,12 @@ if (!isset($_SESSION['userName'])) {
                         <p><select name="parent_id" id="">
                                 <option value="0">No parent</option>
                                 <?php
+
                                 $select = "SELECT * FROM categories WHERE pid='0'";
                                 $result = $connect->query($select);
                                 while ($row = $result->fetch_assoc()) {
                                 ?>
-                                <option value="<?php echo $row['cid'] ;?>"> <?php echo $row['cat_name']; ?></option>
+                                    <option value="<?php echo $row['cid']; ?>"> <?php echo $row['cat_name']; ?></option>
                                 <?php }  ?>
                             </select></p>
                         <p>Category Name</p>

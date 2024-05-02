@@ -16,7 +16,7 @@ if (isset($_POST['save'])) {
     move_uploaded_file($buffer, "../../user_img/" . $fileName);
     //database conection
     $insert = "INSERT INTO student_data SET name='$name',gender='$gender',stream='$stream',subject='$subject',image='$fileName'";
-    if ($conect->query($insert)) {
+    if ($connect->query($insert)) {
         header("location:../dashboard.php");
     };
 } else {

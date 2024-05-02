@@ -100,7 +100,7 @@ if (!isset($_SESSION['userName'])) {
                         <a href="#select" class="active bellow">select</a>
                         <a href="#managecategory" class="bellow">managecategory</a>
                         <a href="#loginhestory" class="bellow">loginhestory</a>
-                        <a href="#pro_view" class="bellow">pro_view</a>
+                        <!-- <a href="#pro_view" class="bellow">pro_view</a> -->
                     </nav>
                     <!-- </header> -->
                 </header>

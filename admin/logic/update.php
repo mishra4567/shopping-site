@@ -20,12 +20,12 @@ if (isset($_POST['save'])) {
         $buffer = $_FILES['s_image']['tmp_name'];
         $fileName = time() . $_FILES['s_image']['name'];
         move_uploaded_file($buffer, "../../user_img/" . $fileName);
-        //database conection
+        //database connection
         $update = "UPDATE student_data SET name='$name',gender='$gender',stream='$stream',subject='$subject',image='$fileName' WHERE sid='$updateId'";
     }else{
         $update = "UPDATE student_data SET name='$name',gender='$gender',stream='$stream',subject='$subject' WHERE sid='$updateId'";
     }
-    if ($conect->query($update)) {
+    if ($connect->query($update)) {
         header("location:../dashboard.php");
     };
 } else {

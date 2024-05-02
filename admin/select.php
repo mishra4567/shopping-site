@@ -23,7 +23,7 @@ include("./logic/db.php");
                 <tbody>
                     <?php 
                     $select ="SELECT * FROM student_data";
-                    $resultSet=$conect->query($select);
+                    $resultSet=$connect->query($select);
                     while($row=$resultSet->fetch_assoc()){
                     ?>
                     <tr>
